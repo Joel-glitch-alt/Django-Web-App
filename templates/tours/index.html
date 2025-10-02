@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tours</title>
+</head>
+<body>
+    <h1>Available Tours</h1>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Nights</th>
+            <th>Price</th>
+        </tr>
+        {% for tour in tours %}
+        <tr>
+            <td>{{ tour.origin_country }}</td>
+            <td>{{ tour.destination_country }}</td>
+            <td>{{ tour.number_of_nights }}</td>
+            <td>${{ tour.price }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No tours available.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
